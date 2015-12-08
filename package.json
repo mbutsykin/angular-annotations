@@ -1,0 +1,26 @@
+{
+  "name": "angular-annotations",
+  "version": "0.0.1",
+  "description": "AngularJS 1.x ES7 decorators",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbutsykin/angular-annotations.git"
+  },
+  "keywords": [
+    "angular",
+    "ES6",
+    "ES7",
+    "annotations",
+    "decorators"
+  ],
+  "author": "Maksym Butsykin <mbutsykin@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbutsykin/angular-annotations/issues"
+  },
+  "homepage": "https://github.com/mbutsykin/angular-annotations#readme"
+}
