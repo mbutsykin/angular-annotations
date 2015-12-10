@@ -6,7 +6,7 @@ import angular from 'angular';
  * @param params
  * @returns {Function}
  */
-function value(params) {
+function Value(params) {
     return target => {
         angular.module(params.module)
             .value(params.name || target.name, new target());
@@ -15,4 +15,4 @@ function value(params) {
     };
 }
 
-export {value};
+export {Value};

@@ -4,7 +4,7 @@
  * @param dependencies
  * @returns {Function}
  */
-function inject(...dependencies) {
+function Inject(...dependencies) {
     return (target, name, descriptor) => {
         let injectable = descriptor ? descriptor.value : target;
 
@@ -14,4 +14,4 @@ function inject(...dependencies) {
     };
 }
 
-export {inject};
+export {Inject};

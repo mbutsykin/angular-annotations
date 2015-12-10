@@ -6,7 +6,7 @@ import angular from 'angular';
  * @param params
  * @returns {Function}
  */
-function controller(params) {
+function Controller(params) {
     return target => {
         angular.module(params.module)
             .controller(params.name || target.name, target);
@@ -15,4 +15,4 @@ function controller(params) {
     };
 }
 
-export {controller};
+export {Controller};

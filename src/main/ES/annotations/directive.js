@@ -7,7 +7,7 @@ import {getInjectableClass, pascalCaseToCamelCase} from 'util/helpers';
  * @param params
  * @returns {Function}
  */
-function directive(params) {
+function Directive(params) {
     return target => {
         angular.module(params.module)
             .directive(pascalCaseToCamelCase(params.selector || target.name), new target());
@@ -16,4 +16,4 @@ function directive(params) {
     };
 }
 
-export {directive};
+export {Directive};

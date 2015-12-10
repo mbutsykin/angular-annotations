@@ -7,7 +7,7 @@ import {getInjectableClass} from 'util/helpers';
  * @param params
  * @returns {Function}
  */
-function run(params) {
+function Run(params) {
     return target => {
         angular.module(params.module)
             .run(getInjectableClass(target));
@@ -16,4 +16,4 @@ function run(params) {
     };
 }
 
-export {run};
+export {Run};

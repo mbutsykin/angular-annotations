@@ -7,7 +7,7 @@ import {getInjectableClass} from 'util/helpers';
  * @param params
  * @returns {Function}
  */
-function factory(params) {
+function Factory(params) {
     return target => {
         angular.module(params.module)
             .factory(params.name || target.name, getInjectableClass(target));
@@ -16,4 +16,4 @@ function factory(params) {
     };
 }
 
-export {factory};
+export {Factory};

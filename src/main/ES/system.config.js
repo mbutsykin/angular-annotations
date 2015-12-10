@@ -6,7 +6,8 @@ System.config({
     "optional": [
       "runtime",
       "optimisation.modules.system"
-    ]
+    ],
+    "stage": 0
   },
   paths: {
     "github:*": "jspm_packages/github/*",
@@ -15,9 +16,13 @@ System.config({
 
   map: {
     "angular": "github:angular/bower-angular@1.4.8",
+    "angular-mocks": "github:angular/bower-angular-mocks@1.4.8",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
+    "github:angular/bower-angular-mocks@1.4.8": {
+      "angular": "github:angular/bower-angular@1.4.8"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },

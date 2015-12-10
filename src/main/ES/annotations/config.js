@@ -7,7 +7,7 @@ import {getInjectableClass} from 'util/helpers';
  * @param params
  * @returns {Function}
  */
-function config(params) {
+function Config(params) {
     return target => {
         angular.module(params.module)
             .config(getInjectableClass(target));
@@ -16,4 +16,4 @@ function config(params) {
     };
 }
 
-export {config};
+export {Config};

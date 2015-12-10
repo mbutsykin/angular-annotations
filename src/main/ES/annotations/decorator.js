@@ -7,7 +7,7 @@ import {getInjectableClass} from 'util/helpers';
  * @param params
  * @returns {Function}
  */
-function decorator(params) {
+function Decorator(params) {
     return target => {
         angular.module(params.module)
             .decorator(params.name || target.name, getInjectableClass(target));
@@ -16,4 +16,4 @@ function decorator(params) {
     };
 }
 
-export {decorator};
+export {Decorator};

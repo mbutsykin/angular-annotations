@@ -6,7 +6,7 @@ import angular from 'angular';
  * @param params
  * @returns {Function}
  */
-function provider(params) {
+function Provider(params) {
     return target => {
         angular.module(params.module)
             .provider(params.name || target.name, target);
@@ -15,4 +15,4 @@ function provider(params) {
     }
 }
 
-export {provider};
+export {Provider};

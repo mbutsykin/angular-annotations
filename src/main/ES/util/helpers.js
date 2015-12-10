@@ -17,7 +17,7 @@ function pascalCaseToCamelCase(str) {
  * @returns {Array.<T>}
  */
 function getInjectableClass(target) {
-    return target.$inject.concat([function () {
+    return (target.$inject || []).concat([function () {
         let deps = Array.prototype.slice.call(arguments);
 
         deps.unshift(null);

@@ -7,7 +7,7 @@ import {getInjectableClass} from 'util/helpers';
  * @param params
  * @returns {Function}
  */
-function filter(params) {
+function Filter(params) {
     return target => {
         angular.module(params.module)
             .filter(params.name || target.name, getInjectableClass(target));
@@ -16,4 +16,4 @@ function filter(params) {
     };
 }
 
-export {filter};
+export {Filter};

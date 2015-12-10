@@ -6,7 +6,7 @@ import angular from 'angular';
  * @param params
  * @returns {Function}
  */
-function constant(params) {
+function Constant(params) {
     return target => {
         angular.module(params.module)
             .constant(params.name || target.name, new target());
@@ -15,4 +15,4 @@ function constant(params) {
     };
 }
 
-export {constant};
+export {Constant};
