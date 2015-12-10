@@ -1,0 +1,27 @@
+import {provider} from 'annotations/provider';
+import {factory} from 'annotations/factory';
+import {service} from 'annotations/service';
+import {value} from 'annotations/value';
+import {constant} from 'annotations/constant';
+import {decorator} from 'annotations/decorator';
+import {filter} from 'annotations/filter';
+import {controller} from 'annotations/controller';
+import {directive} from 'annotations/directive';
+import {component} from 'annotations/component';
+import {config} from 'annotations/config';
+import {run} from 'annotations/run';
+import {inject} from 'annotations/inject';
+
+export const Provider = provider;
+export const Factory = factory;
+export const Service = service;
+export const Value = value;
+export const Constant = constant;
+export const Decorator = decorator;
+export const Filter = filter;
+export const Controller = controller;
+export const Directive = directive;
+export const Component = component;
+export const Config = config;
+export const Run = run;
+export const Inject = inject;

@@ -2,7 +2,7 @@
   "name": "angular-annotations",
   "version": "0.0.1",
   "description": "AngularJS 1.x ES7 decorators",
-  "main": "index",
+  "main": "src/main/ES/bootstrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +22,23 @@
   "bugs": {
     "url": "https://github.com/mbutsykin/angular-annotations/issues"
   },
-  "homepage": "https://github.com/mbutsykin/angular-annotations#readme"
+  "homepage": "https://github.com/mbutsykin/angular-annotations#readme",
+  "jspm": {
+    "jspmNodeConversion": false,
+    "directories": {
+      "baseURL": "src/main/ES"
+    },
+    "configFile": "src/main/ES/system.config.js",
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.8"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "devDependencies": {
+    "jspm": "^0.16.15"
+  }
 }
