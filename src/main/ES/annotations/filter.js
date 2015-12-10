@@ -3,6 +3,9 @@ import {getInjectableClass} from 'util/helpers';
 
 /**
  * Register a filter
+ *
+ * @param params
+ * @returns {Function}
  */
 function filter(params) {
     return target => {

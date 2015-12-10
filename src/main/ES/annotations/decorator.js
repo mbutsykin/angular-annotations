@@ -10,7 +10,7 @@ import {getInjectableClass} from 'util/helpers';
 function decorator(params) {
     return target => {
         angular.module(params.module)
-            .decorator(params.name, getInjectableClass(target));
+            .decorator(params.name || target.name, getInjectableClass(target));
 
         return target;
     };

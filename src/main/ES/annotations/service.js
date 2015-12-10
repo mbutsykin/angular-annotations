@@ -9,7 +9,7 @@ import angular from 'angular';
 function service(params) {
     return target => {
         angular.module(params.module)
-            .service(target.name, target);
+            .service(params.name || target.name, target);
 
         return target;
     };
