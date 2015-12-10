@@ -9,7 +9,7 @@ import angular from 'angular';
 function value(params) {
     return target => {
         angular.module(params.module)
-            .constant(target.name, new target());
+            .value(target.name, new target());
 
         return target;
     };
