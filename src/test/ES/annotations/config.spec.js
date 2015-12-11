@@ -1,9 +1,10 @@
-import {Config} from 'bootstrap';
+import {Config, Module} from 'bootstrap';
 
 describe('@Config decorator', () => {
     const module = angular.module('test', []);
 
-    @Config({module: 'test'})
+    @Config
+    @Module('test')
     class SomeConfig {
         constructor() {}
     }

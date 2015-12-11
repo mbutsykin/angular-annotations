@@ -1,9 +1,10 @@
-import {Controller} from 'bootstrap';
+import {Controller, Module} from 'bootstrap';
 
 describe('@Controller decorator', () => {
     const module = angular.module('test', []);
 
-    @Controller({module: 'test'})
+    @Controller
+    @Module('test')
     class SomeController {
     }
 
