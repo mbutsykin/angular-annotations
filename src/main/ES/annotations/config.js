@@ -4,12 +4,11 @@ import {getInjectableClass} from 'util/helpers';
 /**
  * Register work which needs to be performed on module loading
  *
- * @param params
  * @returns {Function}
  */
-function Config(params) {
+function Config() {
     return target => {
-        angular.module(params.module)
+        angular.module(target.moduleName)
             .config(getInjectableClass(target));
 
         return target;

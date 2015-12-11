@@ -3,13 +3,13 @@ import angular from 'angular';
 /**
  * Register a provider function
  *
- * @param params
  * @returns {Function}
+ * @param name
  */
-function Provider(params) {
+function Provider(name) {
     return target => {
-        angular.module(params.module)
-            .provider(params.name || target.name, target);
+        angular.module(target.moduleName)
+            .provider(name || target.name, target);
 
         return target;
     }

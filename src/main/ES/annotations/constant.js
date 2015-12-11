@@ -3,13 +3,13 @@ import angular from 'angular';
 /**
  * Register a constant service
  *
- * @param params
  * @returns {Function}
+ * @param name
  */
-function Constant(params) {
+function Constant(name) {
     return target => {
-        angular.module(params.module)
-            .constant(params.name || target.name, new target());
+        angular.module(target.moduleName)
+            .constant(name || target.name, new target());
 
         return target;
     };

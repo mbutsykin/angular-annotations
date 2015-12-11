@@ -4,13 +4,13 @@ import {getInjectableClass} from 'util/helpers';
 /**
  * Register a service decorator
  *
- * @param params
  * @returns {Function}
+ * @param name
  */
-function Decorator(params) {
+function Decorator(name) {
     return target => {
-        angular.module(params.module)
-            .decorator(params.name || target.name, getInjectableClass(target));
+        angular.module(target.moduleName)
+            .decorator(name || target.name, getInjectableClass(target));
 
         return target;
     };

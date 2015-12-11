@@ -4,13 +4,13 @@ import {getInjectableClass} from 'util/helpers';
 /**
  * Register a service factory
  *
- * @param params
  * @returns {Function}
+ * @param name
  */
-function Factory(params) {
+function Factory(name) {
     return target => {
-        angular.module(params.module)
-            .factory(params.name || target.name, getInjectableClass(target));
+        angular.module(target.moduleName)
+            .factory(name || target.name, getInjectableClass(target));
 
         return target;
     };

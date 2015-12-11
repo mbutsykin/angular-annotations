@@ -3,13 +3,13 @@ import angular from 'angular';
 /**
  * Register a service constructor
  *
- * @param params
  * @returns {Function}
+ * @param name
  */
-function Service(params) {
+function Service(name) {
     return target => {
-        angular.module(params.module)
-            .service(params.name || target.name, target);
+        angular.module(target.moduleName)
+            .service(name || target.name, target);
 
         return target;
     };

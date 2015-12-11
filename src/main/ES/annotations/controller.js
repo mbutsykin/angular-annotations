@@ -3,13 +3,13 @@ import angular from 'angular';
 /**
  * Register a controller
  *
- * @param params
  * @returns {Function}
+ * @param name
  */
-function Controller(params) {
+function Controller(name) {
     return target => {
-        angular.module(params.module)
-            .controller(params.name || target.name, target);
+        angular.module(target.moduleName)
+            .controller(name || target.name, target);
 
         return target;
     };
