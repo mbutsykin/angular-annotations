@@ -1,6 +1,6 @@
 import {Config, Module} from 'bootstrap';
 
-describe('@Config decorator', () => {
+describe('@Config', () => {
     const module = angular.module('test', []);
 
     @Config

@@ -1,12 +1,12 @@
 import {Constant, Module} from 'bootstrap';
 
-describe('@Constant decorator', () => {
+describe('@Constant', () => {
     const module = angular.module('test', []);
     const constantName = 'CONSTANT';
 
     @Constant(constantName)
     @Module('test')
-    class SomeConfig {
+    class SomeConstant {
         test = 1;
     }
 

@@ -1,20 +1,20 @@
-import {Controller, Module} from 'bootstrap';
+import {Filter, Module} from 'bootstrap';
 
-describe('@Controller', () => {
+describe('@Filter', () => {
     const module = angular.module('test', []);
 
-    @Controller
+    @Filter
     @Module('test')
-    class SomeController {
+    class SomeFilter {
     }
 
-    it('Controller was added', () => {
+    it('Filter was added', () => {
         expect(module._invokeQueue[module._invokeQueue.length - 1][1]).toBe('register');
     });
 
-    it('Controller name correct', () => {
+    it('Filter name correct', () => {
         var controller = module._invokeQueue[module._invokeQueue.length - 1][2];
 
-        expect(controller[0]).toBe('SomeController');
+        expect(controller[0]).toBe('SomeFilter');
     });
 });
