@@ -6,13 +6,20 @@ import {getInjectableClass} from 'util/helpers';
  *
  * @returns {Function}
  */
-function Run() {
-    return target => {
-        angular.module(target.moduleName)
-            .run(getInjectableClass(target));
+function Run(target) {
+    if (typeof target === 'function') {
+        annotate(target);
+    }
 
+    return target => {
+        annotate(target);
         return target;
     };
+
+    function annotate(target) {
+        angular.module(target.moduleName)
+            .run(getInjectableClass(target));
+    }
 }
 
 export {Run};

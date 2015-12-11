@@ -6,13 +6,21 @@ import {getInjectableClass} from 'util/helpers';
  *
  * @returns {Function}
  */
-function Config() {
+function Config(target) {
+    if (typeof target === 'function') {
+        annotate(target);
+    }
+
     return target => {
-        angular.module(target.moduleName)
-            .config(getInjectableClass(target));
+        annotate(target);
 
         return target;
     };
+
+    function annotate(target) {
+        angular.module(target.moduleName)
+            .config(getInjectableClass(target));
+    }
 }
 
 export {Config};

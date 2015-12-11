@@ -7,11 +7,18 @@ import angular from 'angular';
  * @param name
  */
 function Provider(name) {
+    if (typeof name !== 'string') {
+        annotate(name);
+    }
+
     return target => {
+        annotate(target, name);
+        return target;
+    };
+
+    function annotate(target, name) {
         angular.module(target.moduleName)
             .provider(name || target.name, target);
-
-        return target;
     }
 }
 

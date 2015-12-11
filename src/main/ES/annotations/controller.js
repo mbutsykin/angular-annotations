@@ -7,12 +7,20 @@ import angular from 'angular';
  * @param name
  */
 function Controller(name) {
+    if (typeof name !== 'string') {
+        annotate(name);
+    }
+
     return target => {
-        angular.module(target.moduleName)
-            .controller(name || target.name, target);
+        annotate(target, name);
 
         return target;
     };
+
+    function annotate(target, name) {
+        angular.module(target.moduleName)
+            .controller(name || target.name, target);
+    }
 }
 
 export {Controller};

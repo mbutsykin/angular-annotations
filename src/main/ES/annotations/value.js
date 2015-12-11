@@ -7,12 +7,19 @@ import angular from 'angular';
  * @param name
  */
 function Value(name) {
-    return target => {
-        angular.module(target.moduleName)
-            .value(name || target.name, new target());
+    if (typeof name !== 'string') {
+        annotate(name);
+    }
 
+    return target => {
+        annotate(target, name);
         return target;
     };
+
+    function annotate(target, name) {
+        angular.module(target.moduleName)
+            .value(name || target.name, new target());
+    }
 }
 
 export {Value};
