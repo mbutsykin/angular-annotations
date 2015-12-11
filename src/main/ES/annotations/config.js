@@ -1,5 +1,5 @@
 import angular from 'angular';
-import {getInjectableClass} from 'util/helpers';
+import {getInjectableClass} from '../util/helpers';
 
 /**
  * Register work which needs to be performed on module loading

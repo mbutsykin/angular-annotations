@@ -1,5 +1,5 @@
 import angular from 'angular';
-import {getInjectableClass, pascalCaseToCamelCase} from 'util/helpers';
+import {getInjectableClass, pascalCaseToCamelCase} from '../util/helpers';
 
 /**
  * Register a directive
