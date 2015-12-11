@@ -1,4 +1,4 @@
-# angular-annotations
+# angular-annotations [![Build Status](https://travis-ci.org/mbutsykin/angular-annotations.svg?branch=master)](https://travis-ci.org/mbutsykin/angular-annotations)
 #### AngularJS 1.x ES7 decorators
 
 ## Get Started
