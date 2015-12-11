@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/mbutsykin/angular-annotations#readme",
   "jspm": {
+    "jspmNodeConversion": false,
+    "format": "es6",
     "directories": {
       "baseURL": "src/main/ES"
     },
