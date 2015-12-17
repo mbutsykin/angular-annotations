@@ -3,7 +3,7 @@
 
 ## Get Started
 - **[NPM](https://www.npmjs.com/)** `npm install -S angular-annotations`
-- **[JSPM](http://jspm.io/)** `jspm install angular-annotations`
+- **[JSPM](http://jspm.io/)** `jspm install npm:angular-annotations`
 
 ## Available Decorators
 ### Module
