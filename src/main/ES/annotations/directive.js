@@ -19,7 +19,7 @@ function Directive(selector) {
 
     function annotate(target, selector) {
         angular.module(target.moduleName)
-            .directive(pascalCaseToCamelCase(selector || target.name), new target());
+            .directive(pascalCaseToCamelCase(selector || target.name), () => new target());
     }
 }
 
