@@ -1,10 +1,16 @@
 language: node_js
 node_js:
-    - "0.10"
+- '0.10'
 script: node_modules/karma/bin/karma start karma.conf.js --single-run
 before_install:
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- npm install -g jspm
+- jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
+
 before_script:
-    - npm install
-    - jspm install
+- npm install
+- jspm install
+env:
+  global:
+    secure: mQlqp8fl3/5qpnuK4XF5s7oi8uFiwWBQoGQJJJBlDmfkST0haECuZUj/7OrC/iEOHMYy7JUadbiPoKN8Zcbwiqwpu9LZIseRCl9t/13etbl5zSXYa0YRi+HrBnhdETZPSr2+NbbwxXwOjgJS62xwEzx/awEd5Kk9BCjYGPiMPn8dBHSPwkROWBkO7cMHQFUKu/O5tE5gFaYF3IzrnHZxSJQqY9QKtLGeJvCVJ5lTWTaXwIU6ZVnKRIE+hv3U+LmiC6M1ULYEtdBxo12frZnghAzBk46HiQ+sjYvbPce63zon3aPqkPVGiKFeXlOKQEhBZDLV/xh9DQDiBmQ9FLtiwMrQTXlGihtiaz9BN8x28bYNiuOdLRl1NPuJaO+T1/6plVa1jPKofolAe8lxzGU7iolgjxhVGkge5f4B16rZL72Kem1/kmszsb0vqtlo7ROOWzqSCwmQqUg2a6k/p59t9rKKMX/7R8AfhMjEurvP/RtgUdTrYL1MR4vuGY8vIUwDjx4bj4esvTC1d3RqTndqwzDbPDPNf+jCo4qJ9S9XR8ROjQhKxa3IGkzQcfyqYrRYPzGc4HUNxePc17MjVRjsAhiKkN82k787p+dLe9+Ee17D4IXh982HYJUkbtQKA4MSrs1QXA+3/ofgGnfH4EcVeKnymsg+qASXbHPCF2sno6E=
