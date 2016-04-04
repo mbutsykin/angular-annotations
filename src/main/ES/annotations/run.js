@@ -9,6 +9,7 @@ import {getInjectableClass} from '../util/helpers';
 function Run(target) {
     if (typeof target === 'function') {
         annotate(target);
+        return arguments[0];
     }
 
     return target => {

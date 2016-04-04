@@ -10,6 +10,7 @@ import {Directive} from './annotations/directive';
 import {Config} from './annotations/config';
 import {Run} from './annotations/run';
 import {Inject} from './annotations/inject';
+import {InjectAsProperty} from './annotations/injectAsProperty';
 import {Module} from './annotations/module';
 
 export {
@@ -25,5 +26,6 @@ export {
     Config,
     Run,
     Inject,
+    InjectAsProperty,
     Module
 };

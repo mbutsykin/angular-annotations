@@ -1,5 +1,5 @@
 import angular from 'angular';
-import {getInjectableClass, pascalCaseToCamelCase} from '../util/helpers';
+import {pascalCaseToCamelCase} from '../util/helpers';
 
 /**
  * Register a directive
@@ -10,9 +10,11 @@ import {getInjectableClass, pascalCaseToCamelCase} from '../util/helpers';
 function Directive(selector) {
     if (typeof selector !== 'string') {
         annotate(selector);
+        return arguments[0];
     }
 
     return target => {
+        target.name = name;
         annotate(target, selector);
         return target;
     };
