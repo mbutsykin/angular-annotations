@@ -11,7 +11,7 @@ module.exports = function (config) {
 
         jspm: {
             config: "src/main/ES/system.config.js",
-            packages: "src/main/ES/jspm_packages/",
+            packages: "jspm_packages/",
             loadFiles: [
                 'src/test/ES/**/*.spec.js'
             ],
@@ -29,7 +29,7 @@ module.exports = function (config) {
 
         proxies: {
             '/test/': '/base/src/test',
-            '/jspm_packages/': '/base/src/main/ES/jspm_packages/',
+            '/jspm_packages/': '/base/jspm_packages/',
             '/ES/': '/base/src/main/ES/'
         },
 
