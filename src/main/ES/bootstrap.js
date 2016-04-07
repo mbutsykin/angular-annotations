@@ -7,6 +7,7 @@ import {Decorator} from './annotations/decorator';
 import {Filter} from './annotations/filter';
 import {Controller} from './annotations/controller';
 import {Directive} from './annotations/directive';
+import {Component} from './annotations/component';
 import {Config} from './annotations/config';
 import {Run} from './annotations/run';
 import {Inject} from './annotations/inject';
@@ -23,6 +24,7 @@ export {
     Filter,
     Controller,
     Directive,
+	Component,
     Config,
     Run,
     Inject,
