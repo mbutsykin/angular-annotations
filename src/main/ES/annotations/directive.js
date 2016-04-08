@@ -14,7 +14,7 @@ function Directive(selector) {
     }
 
     return target => {
-        target.name = name;
+        target.ng_name = pascalCaseToCamelCase(selector || target.name);
         annotate(target, selector);
         return target;
     };

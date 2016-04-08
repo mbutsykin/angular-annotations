@@ -20,7 +20,7 @@ function InjectAsProperty(dependency) {
 	function annotate(target, dependency, dependencyAs) {
 		angular
 			.module(target.moduleName)
-			.decorator(target.name, [
+			.decorator(target.ng_name, [
 				'$delegate', '$injector',
 				function ($delegate, $injector) {
 					$delegate[dependencyAs || dependency] = $injector.get(dependency);

@@ -13,7 +13,7 @@ function Constant(name) {
     }
 
     return target => {
-        target.name = name;
+        target.ng_name = name;
         annotate(target, name);
         return target;
     };
