@@ -37,11 +37,12 @@ MyClass.someStaticMethod.$inject = ['$http'];
 ```js
 import {Service, InjectAsProperty, Module} from 'angular-annotations';
 
+@InjectAsProperty('$http', '$q')
 @Service('someService')
 @Module('someAngularModuleName')
 class MyClass {
-    @InjectAsProperty('$http')
     $http;
+    $q;
 }
 ```
 

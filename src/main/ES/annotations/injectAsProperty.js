@@ -3,27 +3,23 @@ import angular from 'angular';
 /**
  * Adding class property and assign it to $injector.get('')
  *
- * @param dependency
+ * @param dependencyList
  * @returns {Function}
  */
-function InjectAsProperty(dependency) {
-	if (typeof dependency !== 'string') {
-		annotate(arguments[0], arguments[1]);
-		return arguments[0];
-	}
+function InjectAsProperty(...dependencyList) {
 
-	return (target, name) => {
-		annotate(target, dependency, name);
+	return target => {
+		annotate(target, dependencyList);
 		return target;
 	};
 
-	function annotate(target, dependency, dependencyAs) {
+	function annotate(target, dependencyList) {
 		angular
 			.module(target.moduleName)
 			.decorator(target.ng_name, [
 				'$delegate', '$injector',
 				function ($delegate, $injector) {
-					$delegate[dependencyAs || dependency] = $injector.get(dependency);
+					dependencyList.forEach(dependency => $delegate[dependency] = $injector.get(dependency));
 					return $delegate;
 				}
 			]);
