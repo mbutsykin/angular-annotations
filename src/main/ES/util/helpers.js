@@ -14,16 +14,22 @@ function pascalCaseToCamelCase(str) {
  * Get instantiated, ready to inject class
  *
  * @param target
- * @returns {Array.<T>}
+ * @returns {Array}
  */
 function getInjectableClass(target) {
-    return (target.$inject || []).concat([function () {
+    function proxy() {
         let deps = Array.prototype.slice.call(arguments);
 
         deps.unshift(null);
 
         return new (target.bind.apply(target, deps));
-    }]);
+    }
+
+    proxy.toString = function () {
+        return target.name;
+    };
+
+    return (target.$inject || []).concat([proxy]);
 }
 
 export {pascalCaseToCamelCase, getInjectableClass};
