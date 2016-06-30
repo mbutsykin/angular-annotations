@@ -26,7 +26,7 @@ function getInjectableClass(target) {
     }
 
     proxy.toString = function () {
-        return target.name;
+        return target.name || target.toString().match(/^function\s*([^\s(]+)/)[1];
     };
 
     return (target.$inject || []).concat([proxy]);
