@@ -22,7 +22,7 @@ function Component(selector) {
 	function annotate(target, selector) {
 		angular
 			.module(target.moduleName)
-			.component(pascalCaseToCamelCase(selector || target.name), () => new target());
+			.component(pascalCaseToCamelCase(selector || target.name), new target());
 	}
 }
 
