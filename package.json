@@ -1,6 +1,6 @@
 {
   "name": "angular-annotations",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "AngularJS 1.x ES7 decorators",
   "main": "src/main/ES/bootstrap.js",
   "scripts": {
